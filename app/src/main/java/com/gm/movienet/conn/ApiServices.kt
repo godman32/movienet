@@ -1,13 +1,17 @@
 package com.zym.movienet.conn
 
 import com.gm.movienet.BuildConfig
-import com.gm.movienet.feature.Movie
-import com.gm.movienet.feature.Movies
-import com.gm.movienet.feature.Reviews
-import com.gm.movienet.feature.Trailers
-import com.gm.movienet.feature.genre.Genres
+import com.gm.movienet.feature.movie.model.Movie
+import com.gm.movienet.feature.movie.model.Movies
+import com.gm.movienet.feature.movie.model.Reviews
+import com.gm.movienet.feature.movie.model.Trailers
+import com.gm.movienet.feature.genre.model.Genres
 import retrofit2.Response
 import retrofit2.http.*
+
+/**
+ * Created by @godman on 16/06/23.
+ */
 
 interface ApiServices {
 

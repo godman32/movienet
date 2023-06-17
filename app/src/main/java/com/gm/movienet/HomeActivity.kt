@@ -8,10 +8,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.gm.movienet.Utills.Resource
 import com.gm.movienet.app.MyApplication
-import com.gm.movienet.conn.MainRepository
+import com.gm.movienet.conn.AppRepository
 import com.gm.movienet.databinding.ActivityHomeBinding
-import com.gm.movienet.feature.Movie
-import com.gm.movienet.feature.genre.Genre
+import com.gm.movienet.feature.movie.model.Movie
+import com.gm.movienet.feature.genre.model.Genre
 import com.gm.movienet.feature.genre.GenresFragment
 import com.gm.movienet.feature.listener.OnGenreListener
 import com.gm.movienet.feature.listener.OnMovieListener
@@ -23,11 +23,15 @@ import com.gm.mvies.feature.helper.setVisible
 import com.gm.mvies.feature.listener.OnLoadDataListener
 import com.gm.mvies.feature.listener.OnScrollFullListener
 
+/**
+ * Created by @godman on 16/06/23.
+ */
+
 class HomeActivity : AppCompatActivity(), OnGenreListener, OnScrollFullListener, OnMovieListener,
     OnLoadDataListener {
 
     private val binding by lazy { ActivityHomeBinding.inflate(layoutInflater) }
-    private val viewModel by lazy {ViewModelProvider(this, ViewModelFactory(application, MainRepository())).get(HomeVM::class.java)}
+    private val viewModel by lazy {ViewModelProvider(this, ViewModelFactory(application, AppRepository())).get(HomeVM::class.java)}
 
     private val moviesAdapter by lazy { MoviesAdapter( this, this) }
 
@@ -112,9 +116,7 @@ class HomeActivity : AppCompatActivity(), OnGenreListener, OnScrollFullListener,
                     }
 
                     is Resource.Error -> {
-                        response.message?.let { message ->
-//                            progress.errorSnack(message, Snackbar.LENGTH_LONG)
-                        }
+                        response.message?.let {}
                     }
 
                     is Resource.Loading -> {}
@@ -146,9 +148,7 @@ class HomeActivity : AppCompatActivity(), OnGenreListener, OnScrollFullListener,
                     }
                     is Resource.Error -> {
                         binding.load.setHidden()
-                        response.message?.let { message ->
-//                            progress.errorSnack(message, Snackbar.LENGTH_LONG)
-                        }
+                        response.message?.let { }
                     }
 
                     is Resource.Loading -> {

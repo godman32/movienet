@@ -6,17 +6,20 @@ import com.gm.movienet.Utills.Event
 import com.gm.movienet.Utills.Resource
 import com.gm.movienet.Utills.Utils
 import com.gm.movienet.app.MyApplication
-import com.gm.movienet.conn.MainRepository
-import com.gm.movienet.feature.Movies
-import com.gm.movienet.feature.genre.Genres
+import com.gm.movienet.conn.AppRepository
+import com.gm.movienet.feature.movie.model.Movies
+import com.gm.movienet.feature.genre.model.Genres
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.io.IOException
 
+/**
+ * Created by @godman on 16/06/23.
+ */
 
-class HomeVM(app: Application, private val repository: MainRepository) : AndroidViewModel(app) {
+class HomeVM(app: Application, private val repository: AppRepository) : AndroidViewModel(app) {
 
     private val _genres = MutableLiveData<Event<Resource<Genres>>>()
     val genres: LiveData<Event<Resource<Genres>>> = _genres

@@ -3,12 +3,16 @@ package com.gm.movienet
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.gm.movienet.conn.MainRepository
+import com.gm.movienet.conn.AppRepository
 import com.gm.movienet.feature.movie.detail.DetailMovieVM
+
+/**
+ * Created by @godman on 16/06/23.
+ */
 
 class ViewModelFactory(
     val app: Application,
-    val appRepository: MainRepository
+    val appRepository: AppRepository
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -22,14 +26,4 @@ class ViewModelFactory(
 
         throw IllegalArgumentException("Unknown class name")
     }
-
-
-
-//    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-//        if (modelClass.isAssignableFrom(HomeVM::class.java)) {
-//
-//        }
-//        throw IllegalArgumentException("Unknown class name")
-//    }
-
 }

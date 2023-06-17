@@ -14,6 +14,10 @@
         <item name="android:indeterminateTint">@color/red</item>
     </style>
 
+    <style name="TollbarExt" parent="Theme.Movienet">
+        <item name="android:background">@color/white</item>
+    </style>
+
     <style name="WhiteDrawerIconStyle" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="spinBars">true</item>
         <item name="color">@android:color/black</item>
@@ -41,6 +45,14 @@
         <item name="android:windowTranslucentStatus">true</item>
         <!--        <item name="android:windowTranslucentNavigation">true</item>-->
         <item name="android:statusBarColor">?colorPrimary</item>
+    </style>
+
+    <style name="Splash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@mipmap/pink_back</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

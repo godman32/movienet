@@ -19,7 +19,7 @@
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            style="@style/TollbarExt"
             android:fitsSystemWindows="true"
             android:theme="@style/AppTheme.AppBarOverlay">
 
@@ -29,7 +29,7 @@
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
                 android:minHeight="60dp"
-                app:contentScrim="@color/white"
+                app:contentScrim="@null"
                 app:layout_scrollFlags="scroll"
                 app:toolbarId="@+id/toolbar">
 
@@ -117,7 +117,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:progressTint="?colorAccent"
+                        android:progressTint="@color/yellow"
                         app:layout_constraintEnd_toEndOf="@+id/movie_poster_card"
                         app:layout_constraintStart_toStartOf="@+id/movie_poster_card"
                         app:layout_constraintTop_toBottomOf="@+id/movie_poster_card" />
@@ -151,7 +151,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="23dp"
-            android:paddingBottom="50dp"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
             <LinearLayout
@@ -197,7 +196,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:layout_marginBottom="70dp"
                     android:visibility="gone">
 
                     <TextView
@@ -216,6 +214,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="7dp"
+                        android:layout_marginBottom="70dp"
                         android:nestedScrollingEnabled="false"
                         android:orientation="vertical"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -223,7 +222,6 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>

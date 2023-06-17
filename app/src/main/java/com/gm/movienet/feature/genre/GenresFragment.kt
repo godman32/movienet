@@ -1,14 +1,18 @@
 package com.gm.movienet.feature.genre
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import com.gm.movienet.R
 import com.gm.movienet.databinding.FragmentGenresBinding
+import com.gm.movienet.feature.genre.model.Genre
 import com.gm.movienet.feature.listener.OnGenreListener
+
+/**
+ * Created by @godman on 16/06/23.
+ */
 
 class GenresFragment(
     private val genres:List<Genre>,

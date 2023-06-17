@@ -1,5 +1,8 @@
 package com.gm.movienet.Utills
 
+/**
+ * Created by @godman on 16/06/23.
+ */
 
 open class Event<out T>(private val content: T) {
 

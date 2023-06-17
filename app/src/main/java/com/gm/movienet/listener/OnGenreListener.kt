@@ -1,7 +1,6 @@
 package com.gm.movienet.feature.listener
 
-import com.gm.movienet.feature.genre.Genre
-
+import com.gm.movienet.feature.genre.model.Genre
 
 /**
  * Created by @godman on 16/06/23.

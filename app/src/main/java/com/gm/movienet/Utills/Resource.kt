@@ -1,5 +1,9 @@
 package com.gm.movienet.Utills
 
+/**
+ * Created by @godman on 16/06/23.
+ */
+
 sealed class Resource<T>(
     val data: T? = null,
     val message: String? = null

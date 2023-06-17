@@ -2,8 +2,6 @@ package com.gm.movienet.feature.movie.detail
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,15 +17,15 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import com.gm.movienet.HomeVM
 import com.gm.movienet.R
 import com.gm.movienet.Utills.Resource
 import com.gm.movienet.ViewModelFactory
 import com.gm.movienet.app.MyApplication
-import com.gm.movienet.conn.MainRepository
+import com.gm.movienet.conn.AppRepository
 import com.gm.movienet.databinding.FragmentDetailMovieBinding
-import com.gm.movienet.feature.Movie
+import com.gm.movienet.feature.movie.model.Movie
 import com.gm.movienet.feature.listener.OnGenreListener
+import com.gm.mvies.feature.helper.ImageURL
 import com.gm.mvies.feature.helper.Status
 import com.gm.mvies.feature.helper.setHidden
 import com.gm.mvies.feature.helper.setVisible
@@ -36,6 +34,10 @@ import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstan
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 
+/**
+ * Created by @godman on 16/06/23.
+ */
+
 class DetailMovieFragment(
     private val application: MyApplication,
     private var movie: Movie,
@@ -43,7 +45,7 @@ class DetailMovieFragment(
 
     private val binding by lazy { FragmentDetailMovieBinding.inflate(layoutInflater) }
     private val viewModel by lazy {
-        ViewModelProvider(this, ViewModelFactory(application, MainRepository())).get(
+        ViewModelProvider(this, ViewModelFactory(application, AppRepository())).get(
             DetailMovieVM::class.java)}
 
     private val reviewsAdapter by lazy { ReviewsAdapter( ) }
@@ -85,7 +87,7 @@ class DetailMovieFragment(
         binding.movieReleaseDate.text= movie.releaseDate
         binding.movieRating.rating = (movie.popularity?.toFloat() ?: 0f) /2
 
-        Glide.with(this).load("https://image.tmdb.org/t/p/w154"+movie.posterPath)
+        Glide.with(this).load(ImageURL.W154+movie.posterPath)
             .diskCacheStrategy(DiskCacheStrategy.ALL)
             .listener(object : RequestListener<Drawable> {
                 override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?,
@@ -117,9 +119,9 @@ class DetailMovieFragment(
                             var url= "";
 
                             if(movie.backdropPath.toString().equals("null")){
-                                url= "https://image.tmdb.org/t/p/w780"+movie.posterPath
+                                url= ImageURL.W780+movie.posterPath
                             } else{
-                                url= "https://image.tmdb.org/t/p/w780"+movie.backdropPath
+                                url= ImageURL.W780+movie.backdropPath
                             }
 
                             Glide.with(this).load(url)
@@ -142,10 +144,9 @@ class DetailMovieFragment(
                     }
 
                     is Resource.Error -> {
-                        response.message?.let { message ->
+                        response.message?.let {
                             binding.movieBackdrop.setImageResource(R.mipmap.logo_red)
                             binding.movieBackdrop.scaleType= ImageView.ScaleType.CENTER_INSIDE
-//                            progress.errorSnack(message, Snackbar.LENGTH_LONG)
                         }
                     }
 

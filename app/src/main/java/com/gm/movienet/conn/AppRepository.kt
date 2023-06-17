@@ -2,8 +2,11 @@ package com.gm.movienet.conn
 
 import com.zym.movienet.conn.NetworkBuilder
 
+/**
+ * Created by @godman on 16/06/23.
+ */
 
-class MainRepository() {
+class AppRepository() {
 
     suspend fun getGenres() = NetworkBuilder.api.getGenres()
 

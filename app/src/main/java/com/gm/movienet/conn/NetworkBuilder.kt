@@ -8,6 +8,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+/**
+ * Created by @godman on 16/06/23.
+ */
 
 object NetworkBuilder {
     val api : ApiServices by lazy {

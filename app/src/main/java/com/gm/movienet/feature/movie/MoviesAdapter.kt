@@ -1,39 +1,25 @@
 package com.gm.movienet.feature.movie
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.graphics.drawable.Drawable
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
-import coil.ImageLoader
 import coil.load
-import coil.request.ImageRequest
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.DataSource
-import com.bumptech.glide.load.engine.DiskCacheStrategy
-import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.module.AppGlideModule
-import com.bumptech.glide.request.RequestListener
-import com.bumptech.glide.request.target.Target
 import com.gm.movienet.R
 import com.gm.movienet.databinding.ItemMovieBinding
-import com.gm.movienet.feature.Movie
+import com.gm.movienet.feature.movie.model.Movie
 import com.gm.movienet.feature.listener.OnMovieListener
+import com.gm.mvies.feature.helper.ImageURL
+import com.gm.mvies.feature.helper.Status
 import com.gm.mvies.feature.helper.setHidden
-import com.gm.mvies.feature.helper.setVisible
 import com.gm.mvies.feature.listener.OnScrollFullListener
-import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-
 /**
- * Created by @godman on 13/06/23.
+ * Created by @godman on 16/06/23.
  */
 
 class MoviesAdapter(
@@ -42,19 +28,18 @@ class MoviesAdapter(
 ) : RecyclerView.Adapter<MoviesAdapter.ViewHolder>() {
     private var movies = ArrayList<Movie>()
 
-    private var load= false
-    var clear= false
+    var status= Status.FREE
 
     fun add(movies: List<Movie>) {
         this.movies.addAll(movies)
-        load= false
+        status= Status.FREE
     }
 
     @SuppressLint("NotifyDataSetChanged")
     fun clearData(){
         movies.clear()
         notifyDataSetChanged()
-        load= false
+        status= Status.FREE
     }
 
     class ViewHolder(val binding: ItemMovieBinding) : RecyclerView.ViewHolder(binding.root) {}
@@ -76,7 +61,7 @@ class MoviesAdapter(
 
         CoroutineScope(Dispatchers.IO).launch {
 
-            holder.binding.image.load("https://image.tmdb.org/t/p/w300"+ movies[position].posterPath){
+            holder.binding.image.load(ImageURL.W300+ movies[position].posterPath){
                 listener(
                     onSuccess = { _, _ ->
                         holder.binding.load.setHidden()
@@ -91,8 +76,8 @@ class MoviesAdapter(
         }
 
 
-        if(position > itemCount - 8 && !load && itemCount > 0){
-            load= true
+        if(position > itemCount - 8 && status == Status.FREE && itemCount > 0){
+            status= Status.LOAD
             onScrollFullListener.onScrollFull()
         }
 

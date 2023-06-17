@@ -7,18 +7,17 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.gm.movienet.R
 import com.gm.movienet.databinding.ItemReviewBinding
-import com.gm.movienet.feature.Review
+import com.gm.movienet.feature.movie.model.Review
+import com.gm.mvies.feature.helper.ImageURL
 import com.gm.mvies.feature.helper.TimeFormat
 import com.gm.mvies.feature.helper.format
 import com.gm.mvies.feature.helper.toDate
-import java.util.*
 import kotlin.collections.ArrayList
 
 
 /**
- * Created by @godman on 13/06/23.
+ * Created by @godman on 16/06/23.
  */
-
 class ReviewsAdapter : RecyclerView.Adapter<ReviewsAdapter.ViewHolder>() {
     private var reviews = ArrayList<Review>()
 
@@ -51,7 +50,7 @@ class ReviewsAdapter : RecyclerView.Adapter<ReviewsAdapter.ViewHolder>() {
                 .circleCrop()
                 .into(holder.binding.image)
         } else{
-            Glide.with(holder.itemView).load("https://image.tmdb.org/t/p/w92"+reviews[position].authorDetails?.avatarPath)
+            Glide.with(holder.itemView).load(ImageURL.W92+reviews[position].authorDetails?.avatarPath)
                 .error(R.mipmap.ic_user)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .circleCrop()

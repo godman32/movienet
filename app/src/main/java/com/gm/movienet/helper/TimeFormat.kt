@@ -1,5 +1,9 @@
 package com.gm.mvies.feature.helper
 
+/**
+ * Created by @godman on 16/06/23.
+ */
+
 class TimeFormat{
     companion object{
         val SYSTEM= "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"

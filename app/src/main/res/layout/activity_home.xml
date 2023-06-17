@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
-            android:background="@color/white"
+            style="@style/TollbarExt"
             android:theme="@style/Theme.Movienet.AppBarOverlay">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fitsSystemWindows="true"
-                app:contentScrim="@color/white"
+                app:contentScrim="@null"
                 app:layout_scrollFlags="scroll|enterAlways"
                 app:toolbarId="@+id/toolbar">
 

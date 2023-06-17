@@ -1,10 +1,10 @@
-package com.gm.movienet.feature
+package com.gm.movienet.feature.movie.model
 
-import com.gm.movienet.feature.genre.Genres
+import com.gm.movienet.feature.genre.model.Genres
 import com.google.gson.annotations.SerializedName
 
 /**
- * Created by @godman on 13/06/23.
+ * Created by @godman on 16/06/23.
  */
 
 data class Movie (

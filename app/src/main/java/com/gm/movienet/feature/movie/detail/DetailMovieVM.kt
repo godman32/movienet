@@ -7,12 +7,10 @@ import com.gm.movienet.Utills.Event
 import com.gm.movienet.Utills.Resource
 import com.gm.movienet.Utills.Utils
 import com.gm.movienet.app.MyApplication
-import com.gm.movienet.conn.MainRepository
-import com.gm.movienet.feature.Movie
-import com.gm.movienet.feature.Reviews
-import com.gm.movienet.feature.Trailer
-import com.gm.movienet.feature.Trailers
-import com.gm.movienet.feature.genre.Genres
+import com.gm.movienet.conn.AppRepository
+import com.gm.movienet.feature.movie.model.Movie
+import com.gm.movienet.feature.movie.model.Reviews
+import com.gm.movienet.feature.movie.model.Trailers
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -20,7 +18,11 @@ import retrofit2.Response
 import java.io.IOException
 
 
-class DetailMovieVM(app: Application, private val repository: MainRepository) : AndroidViewModel(app) {
+/**
+ * Created by @godman on 16/06/23.
+ */
+
+class DetailMovieVM(app: Application, private val repository: AppRepository) : AndroidViewModel(app) {
 
 
     private val _movie = MutableLiveData<Event<Resource<Movie>>>()
