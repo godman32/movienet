@@ -1,5 +1,6 @@
 # movienet
 
+<img src="https://github.com/godman32/movienet/assets/38779751/b57ef893-63e4-49a1-9165-0fa29f4fea1e"  width="60%" height="30%">
 ![](https://github.com/godman32/movienet/assets/38779751/b57ef893-63e4-49a1-9165-0fa29f4fea1e)
 ![](https://github.com/godman32/movienet/assets/38779751/b434bc00-967b-4f53-aa9b-5cdf23dbae23)
 ![](https://github.com/godman32/movienet/assets/38779751/3b56f641-4a72-4413-9dd6-f22b32185c2d)
