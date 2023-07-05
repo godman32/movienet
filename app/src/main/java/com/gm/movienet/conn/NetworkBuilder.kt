@@ -1,4 +1,4 @@
-package com.zym.movienet.conn
+package com.gm.movienet.conn
 
 import com.gm.movienet.BuildConfig
 import com.google.gson.GsonBuilder
@@ -9,8 +9,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 /**
- * Created by @godman on 16/06/23.
+ * Created by @godman on 04/07/23.
  */
+
 
 object NetworkBuilder {
     val api : ApiServices by lazy {

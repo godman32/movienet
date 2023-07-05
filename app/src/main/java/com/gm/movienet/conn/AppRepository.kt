@@ -1,9 +1,9 @@
 package com.gm.movienet.conn
 
-import com.zym.movienet.conn.NetworkBuilder
+import com.gm.movienet.conn.NetworkBuilder
 
 /**
- * Created by @godman on 16/06/23.
+ * Created by @godman on 04/07/23.
  */
 
 class AppRepository() {

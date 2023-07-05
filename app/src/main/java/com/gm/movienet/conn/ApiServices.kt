@@ -1,4 +1,4 @@
-package com.zym.movienet.conn
+package com.gm.movienet.conn
 
 import com.gm.movienet.BuildConfig
 import com.gm.movienet.feature.movie.model.Movie

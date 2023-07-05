@@ -1,7 +1,7 @@
 package com.gm.mvies.feature.helper
 
 /**
- * Created by @godman on 16/06/23.
+ * Created by @godman on 04/07/23.
  */
 
 class TimeFormat{

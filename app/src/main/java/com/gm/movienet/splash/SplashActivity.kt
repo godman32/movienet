@@ -12,7 +12,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 /**
- * Created by @godman on 17/06/23.
+ * Created by @godman on 04/07/23.
  */
 
 class SplashActivity : AppCompatActivity() {

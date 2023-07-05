@@ -19,7 +19,7 @@ import java.io.IOException
 
 
 /**
- * Created by @godman on 16/06/23.
+ * Created by @godman on 04/07/23.
  */
 
 class DetailMovieVM(app: Application, private val repository: AppRepository) : AndroidViewModel(app) {
