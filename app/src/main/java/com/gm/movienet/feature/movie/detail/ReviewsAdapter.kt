@@ -16,7 +16,7 @@ import kotlin.collections.ArrayList
 
 
 /**
- * Created by @godman on 04/07/23.
+ * Created by @godman on 05/07/23.
  */
 
 class ReviewsAdapter : RecyclerView.Adapter<ReviewsAdapter.ViewHolder>() {

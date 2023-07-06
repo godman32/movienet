@@ -6,7 +6,7 @@ import android.net.NetworkCapabilities
 import com.gm.movienet.app.MyApplication
 
 /**
- * Created by @godman on 04/07/23.
+ * Created by @godman on 05/07/23.
  */
 object Utils {
     fun hasInternetConnection(application: MyApplication): Boolean {

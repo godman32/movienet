@@ -10,7 +10,7 @@ import retrofit2.Response
 import retrofit2.http.*
 
 /**
- * Created by @godman on 16/06/23.
+ * Created by @godman on 05/07/23.
  */
 
 interface ApiServices {

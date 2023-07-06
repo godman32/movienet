@@ -24,7 +24,7 @@ import com.gm.mvies.feature.listener.OnLoadDataListener
 import com.gm.mvies.feature.listener.OnScrollFullListener
 
 /**
- * Created by @godman on 04/07/23.
+ * Created by @godman on 05/07/23.
  */
 class HomeActivity : AppCompatActivity(), OnGenreListener, OnScrollFullListener, OnMovieListener,
     OnLoadDataListener {

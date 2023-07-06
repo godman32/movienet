@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 
 /**
- * Created by @godman on 04/07/23.
+ * Created by @godman on 05/07/23.
  */
 @SuppressLint("SimpleDateFormat")
 fun Date.format(format: String):String{

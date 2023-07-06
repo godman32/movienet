@@ -8,7 +8,7 @@ import com.gm.movienet.feature.genre.model.Genre
 import com.gm.movienet.feature.listener.OnGenreListener
 
 /**
- * Created by @godman on 04/07/23.
+ * Created by @godman on 05/07/23.
  */
 
 class GenresAdapter(private val genres: List<Genre>, private val onGenreListener: OnGenreListener) : RecyclerView.Adapter<GenresAdapter.ViewHolder>() {

@@ -11,7 +11,7 @@ import com.gm.movienet.feature.genre.model.Genre
 import com.gm.movienet.feature.listener.OnGenreListener
 
 /**
- * Created by @godman on 04/07/23.
+ * Created by @godman on 05/07/23.
  */
 
 class GenresFragment(

@@ -1,7 +1,7 @@
 package com.gm.movienet.Utills
 
 /**
- * Created by @godman on 04/07/23.
+ * Created by @godman on 05/07/23.
  */
 
 sealed class Resource<T>(
